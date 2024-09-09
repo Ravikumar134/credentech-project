@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@tailwind base;
+
+a {
+  @apply text-blue-700;
+}
+
+a:hover {
+  @apply border-b-2 border-blue-700;
+}
+
+@tailwind components;
+
+@tailwind utilities;
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.content p {
+  @apply my-6;
+}
+
+.content ul {
+  @apply my-6;
+}
+
+.screen-size {
+  @apply max-w-screen-1440;
+  @apply mx-auto;
+}
+
+.theme-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+
+.sponsors-container {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.sponsors-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.hero-bg-right {
+  width: 400px;
+  height: 400px;
+  background-color: #0037FF;
+  opacity: 0.4;
+  border-radius: 250px;
+  filter: blur(200px);
+  position: absolute;
+  top: 10%;
+  right: 0%;
+}
+
+
+.hero-bg-left {
+  z-index: 0;
+  width: 400px;
+  height: 400px;
+  background-color: #00CCFF;
+  opacity: 0.4;
+  border-radius: 250px;
+  filter: blur(200px);
+  position: absolute;
+  bottom: 10%;
+  left: 0%;
+}
+
+/* Infinite scrolling effect */
+@media (max-width: 768px) {
+  .sponsors-wrapper {
+    animation: scroll-left 5s linear infinite;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
